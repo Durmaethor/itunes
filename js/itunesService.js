@@ -14,7 +14,7 @@ angular.module('itunes').service('itunesService', function($http, $q){
 
         $http({
           method: 'JSONP',
-          url:'https://itunes.apple.com/search?term=' + artist + media '&callback=JSON_CALLBACK'
+          url:'https://itunes.apple.com/search?term=' + artist + media + '&callback=JSON_CALLBACK'
         }).then(function(response){
             var result = response.data.results;
             var formattedResult = [];
