@@ -23,7 +23,7 @@ angular.module('itunes').service('itunesService', function($http, $q){
               formattedResult.push(new FormattedArtist(result[obj]))
             }
 
-            defer.resolve(formattedResult);
+            deferred.resolve(formattedResult);
         })
         return deferred.promise;
     }
