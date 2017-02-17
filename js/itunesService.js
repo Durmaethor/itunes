@@ -34,6 +34,21 @@ angular.module('itunes').service('itunesService', function($http, $q){
     // Go to the next step in the README (Tie in your controller). You will come back to these instructions shortly.
     // 
     // You need to sort the data you get back from the itunes API to be an object in the following format.
+
+    var FormattedArtist = function (artistInfo) {
+      this.AlbumArt = artistInfo.artworkUrl60;
+      this.Artist = artistInfo.artistName;
+      this.Collection = artistInfo.collectionName;
+      this.CollectionPrice = artistInfo.collectionPrice;
+      this.Play = artistInfo.previewUrl;
+      this.Type = artistInfo.kind;
+      this.TrackPrice = artistInfo.trackPrice;
+      this.Explicit = artistInfo.trackExplicitness;
+      this.Genre = artistInfo.primaryGenreName;
+      this.Song = artistInfo.trackName;
+
+    }
+
     /*
       AlbumArt: "http://a3.mzstatic.com/us/r30/Features4/v4/22/be/30/22be305b-d988-4525-453c-7203af1dc5a3/dj.srlprmuo.100x100-75.jpg"
       Artist: "Nelly"
